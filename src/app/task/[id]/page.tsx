@@ -4,13 +4,15 @@ import { Navbar } from '@/components/ui/navbar';
 import { EditTaskForm } from '@/components/task/edit-task-form';
 import { getTask, getCurrentUser } from '@/lib/actions';
 
+// Updated interface to match Next.js 15+ page props requirements
 interface EditTaskPageProps {
   params: {
     id: string;
   };
+  searchParams: Record<string, string | string[] | undefined>;
 }
 
-export default async function EditTaskPage({ params }: EditTaskPageProps) {
+export default async function EditTaskPage({ params, searchParams }: EditTaskPageProps) {
   try {
     // Protected route
     const user = await getCurrentUser();
