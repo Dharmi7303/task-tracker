@@ -3,9 +3,9 @@
 
 import { prisma } from './db';
 import { auth, signIn, signOut } from './auth';
-import { redirect } from 'next/navigation';
 import { hash } from 'bcrypt';
 import { revalidatePath } from 'next/cache';
+import { TaskStatus } from '../../prisma/generated/client';
 
 // User Registration
 export async function registerUser(formData: FormData) {
@@ -97,7 +97,7 @@ export async function createTask(formData: FormData) {
       data: {
         title,
         description,
-        status: status as any || 'TODO',
+        status: (status as TaskStatus) || 'TODO',
         userId: session.user.id,
       },
     });
@@ -139,7 +139,7 @@ export async function updateTask(taskId: string, formData: FormData) {
       data: {
         title,
         description,
-        status: status as any,
+        status: status as TaskStatus,
       },
     });
     

@@ -6,13 +6,13 @@ import { getTask, getCurrentUser } from '@/lib/actions';
 
 // Updated interface to match Next.js 15+ page props requirements
 interface EditTaskPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
-  searchParams: Record<string, string | string[] | undefined>;
+  }>;
 }
 
-export default async function EditTaskPage({ params, searchParams }: EditTaskPageProps) {
+export default async function EditTaskPage({ params }: EditTaskPageProps) {
+  const { id } = await params;
   try {
     // Protected route
     const user = await getCurrentUser();
@@ -21,7 +21,7 @@ export default async function EditTaskPage({ params, searchParams }: EditTaskPag
     }
 
     // Get task
-    const task = await getTask(params.id);
+    const task = await getTask(id);
     
     // Check if task exists and belongs to user
     if (!task) {

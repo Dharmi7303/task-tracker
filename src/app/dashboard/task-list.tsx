@@ -16,7 +16,7 @@ export async function TaskList() {
   if (tasks.length === 0) {
     return (
       <div className="text-center py-8 text-gray-500">
-        You don't have any tasks yet. Click "Add New Task" to get started.
+        You don&apos;t have any tasks yet. Click &quot;Add New Task&quot; to get started.
       </div>
     );
   }

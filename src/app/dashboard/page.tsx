@@ -2,7 +2,7 @@
 import { redirect } from 'next/navigation';
 import { Navbar } from '@/components/ui/navbar';
 import { CreateTaskForm } from '@/components/task/create-task-form';
-import { getCurrentUser, getUserTasks } from '@/lib/actions';
+import { getCurrentUser } from '@/lib/actions';
 import { Suspense } from 'react';
 import { TaskList } from './task-list';
 

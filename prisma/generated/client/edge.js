@@ -174,7 +174,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "D:\\Courses\\Nextjs\\Assignment\\task-tracker\\prisma\\generated\\client",
+      "value": "/Users/dharmijaviya/Downloads/task-tracker/prisma/generated/client",
       "fromEnvVar": null
     },
     "config": {
@@ -183,17 +183,16 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "darwin-arm64",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "D:\\Courses\\Nextjs\\Assignment\\task-tracker\\prisma\\schema.prisma",
+    "sourceFilePath": "/Users/dharmijaviya/Downloads/task-tracker/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../..",
   "clientVersion": "6.6.0",
@@ -202,11 +201,12 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "postgresql://postgres:admin@1234@localhost:5432/postgres"
+        "value": null
       }
     }
   },

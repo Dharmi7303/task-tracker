@@ -1,5 +1,5 @@
 // lib/db.ts
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '../../prisma/generated/client';
 
 // Create a singleton Prisma client instance
 const globalForPrisma = global as unknown as {
