@@ -25,10 +25,15 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 The application requires the following environment variables:
 
 - `DATABASE_URL`: PostgreSQL database connection string
-- `NEXTAUTH_SECRET`: Secret key for NextAuth.js
-- `NEXTAUTH_URL`: URL of the application
+- `NEXTAUTH_SECRET`: Secret key for NextAuth.js (generate with `openssl rand -base64 32`)
+- `NEXTAUTH_URL`: URL of the application (e.g., `https://your-app.vercel.app`)
 
-For Vercel deployment, set these variables in your Vercel project settings.
+### For Local Development:
+1. Copy `.env.example` to `.env.local`
+2. Fill in your database URL and generate a secret key
+
+### For Vercel Deployment:
+Set these variables in your Vercel project settings under Environment Variables.
 
 ## Deploy on Vercel
 

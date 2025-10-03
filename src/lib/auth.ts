@@ -15,13 +15,9 @@ declare module 'next-auth' {
   }
 }
 
-export const { 
-  handlers: { GET, POST },
-  auth, 
-  signIn, 
-  signOut 
-} = NextAuth({
+const nextAuthConfig = NextAuth({
   adapter: PrismaAdapter(prisma),
+  secret: process.env.NEXTAUTH_SECRET || 'fallback-secret-for-development',
   providers: [
     CredentialsProvider({
       name: 'Credentials',
@@ -99,3 +95,6 @@ export const {
 
   debug: process.env.NODE_ENV === 'development',
 });
+
+export const { handlers, auth, signIn, signOut } = nextAuthConfig;
+export const { GET, POST } = handlers;
